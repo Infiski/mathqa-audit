@@ -1,8 +1,8 @@
-# How Much of MathQA Is Repetition?
+# A Copy Baseline With Zero Learned Parameters Beats a 144M-Parameter RoBERTa Solver
 
-Code for the paper *How Much of MathQA Is Repetition? A Copy Baseline With No Learned Weights Outperforms a RoBERTa Solver*.
 
-We found that the test questions are almost identical to the training questions, just with different numbers. Our code measures how much the dataset repeats itself. It also shows that a model can get a high score just by copying from the training data, without actually learning how to reason.
+
+Most MathQA test questions are training questions with only the numbers changed: 71% on the filtered test set and 77% on the full test set. This code measures that repetition and shows what copying alone can score. A baseline with zero learned parameters, which copies the program of a matching or similar training question, reaches 82.55% on the filtered test set. That beats a 144M-parameter RoBERTa solver at 77.20%. A high score on this benchmark therefore does not by itself show that a model can reason.
 
 ## Quick start
 
