@@ -2,7 +2,7 @@
 
 Code for the paper *How Much of MathQA Is Repetition? A Copy Baseline With No Learned Weights Outperforms a RoBERTa Solver*.
 
-No test question in MathQA is an exact copy of a training question, but most are training questions with only the numbers changed. This code measures that repetition and shows what a method that only copies from training can score.
+We found that the test questions are almost identical to the training questions, just with different numbers. Our code measures how much the dataset repeats itself. It also shows that a model can get a high score just by copying from the training data, without actually learning how to reason.
 
 ## Quick start
 
@@ -46,8 +46,9 @@ mathqa-audit/
 
 The baseline has no learned weights. It uses only the training questions and their programs.
 
-- **Rule 1 (lookup):** if the test question has the same wording as a training question, ignoring numbers, run the most common training program for that wording on the test question's numbers.
-- **Rule 2 (nearest question):** otherwise, find the most similar training question with the same count of numbers (TF-IDF cosine similarity), copy its program and run it on the test question's numbers.
+
+- **Rule 1 (lookup):** if a test question has the same wording as a training question, except for the numbers, we take the most common program among those training questions and run it on the test question's numbers.
+- **Rule 2 (nearest question):** otherwise, we find the most similar training question with the same count of numbers (TF-IDF cosine similarity), copy its program and run it on the test question's numbers.
 
 Ties are broken with a stable sort, so the results are the same on every machine.
 
