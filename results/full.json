@@ -1,0 +1,67 @@
+{
+  "repetition": {
+    "train_problems": 29837,
+    "distinct_train_templates": 11569,
+    "test": {
+      "exact_copies": 0,
+      "same_template": 2299,
+      "percent": 77.01842546063652
+    },
+    "dev": {
+      "exact_copies": 0,
+      "same_template": 3413,
+      "percent": 76.26815642458101
+    },
+    "share_in_template_seen_twice": 77.3976459232646
+  },
+  "test": {
+    "rule1_all": 55.04187604690117,
+    "rule1_seen": 71.46585471944323,
+    "rule2_new": 43.14868804664723,
+    "rules_1_and_2_all": 64.95812395309882,
+    "near_duplicates_percent_of_new": 45.626822157434404
+  },
+  "dev": {
+    "rule1_all": 55.10614525139665,
+    "rule1_seen": 72.2531497216525,
+    "rule2_new": 40.772128060263654,
+    "rules_1_and_2_all": 64.78212290502793,
+    "near_duplicates_percent_of_new": 47.740112994350284
+  },
+  "matching_rules": {
+    "Closest option": {
+      "rules_1_and_2": 64.95812395309882,
+      "reference": 72.22780569514238,
+      "random": 21.54103852596315
+    },
+    "Within 10%": {
+      "rules_1_and_2": 57.48743718592964,
+      "reference": 65.92964824120602,
+      "random": 1.742043551088777
+    },
+    "Within 5%": {
+      "rules_1_and_2": 56.08040201005026,
+      "reference": 64.5896147403685,
+      "random": 1.474036850921273
+    },
+    "Within 2%": {
+      "rules_1_and_2": 54.63986599664992,
+      "reference": 62.8140703517588,
+      "random": 1.0385259631490789
+    },
+    "Within 1%": {
+      "rules_1_and_2": 53.40033500837521,
+      "reference": 61.50753768844221,
+      "random": 0.9380234505862647
+    },
+    "Within 0.1%": {
+      "rules_1_and_2": 51.02177554438862,
+      "reference": 59.12897822445561,
+      "random": 0.7705192629815745
+    }
+  },
+  "template_disjoint": {
+    "test_problems": 2985,
+    "rule2": 41.84254606365159
+  }
+}

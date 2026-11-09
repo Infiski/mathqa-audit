@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+.ipynb_checkpoints/
+
+# Downloaded when the scripts run
+data/filtered/*.json
+data/full/*.json
+deduct_reasoner/Deductive-MWP/
+results/deduct_reasoner/
