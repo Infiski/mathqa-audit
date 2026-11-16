@@ -50,10 +50,6 @@ def permutation(n, k):
     return float(math.perm(int(n), int(k)))
 
 
-# MathQA lists operation names but no formulas, so these are written from the names.
-# Misspellings such as "circumface" and "reminder" are how the dataset spells them.
-# "log" is base 2 because that matched the training data best, on weak evidence.
-# "sine" and "tangent" are left out: each appears once in training and no formula helped.
 OPERATIONS = {
     "add": lambda a, b: a + b,
     "subtract": lambda a, b: a - b,
