@@ -20,7 +20,7 @@ def _read_splits(folder):
 
 
 def load_filtered():
-    """The 16,191 / 2,411 / 1,605 split released with DeductReasoner. Downloads it the first time."""
+    """The 16,191 / 2,411 / 1,605 split released with DeductReasoner."""
     DATA_FILTERED.mkdir(parents=True, exist_ok=True)
     for split in SPLITS:
         path = DATA_FILTERED / f"{split}.json"
@@ -31,7 +31,7 @@ def load_filtered():
 
 
 def load_full():
-    """The official 29,837 / 4,475 / 2,985 MathQA release. Downloads it the first time."""
+    """The official 29,837 / 4,475 / 2,985 MathQA release."""
     DATA_FULL.mkdir(parents=True, exist_ok=True)
     if not all((DATA_FULL / f"{split}.json").exists() for split in SPLITS):
         print("Downloading full MathQA")
