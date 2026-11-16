@@ -9,3 +9,6 @@ data/filtered/*.json
 data/full/*.json
 deduct_reasoner/Deductive-MWP/
 results/deduct_reasoner/
+
+# Example outputs from show_retrievals.py and deduct_reasoner/analyze.py
+results/examples/
