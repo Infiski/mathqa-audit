@@ -5,7 +5,7 @@ import numpy as np
 
 
 def exact_mcnemar(only_first_right, only_second_right):
-    """Two-sided p-value. If the methods were equally good, each disagreement would be a coin flip."""
+    """Two-sided p-value."""
     total = only_first_right + only_second_right
     smaller = min(only_first_right, only_second_right)
     return min(1.0, 2 * sum(comb(total, i) for i in range(smaller + 1)) / 2 ** total)
