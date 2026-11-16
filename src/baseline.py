@@ -1,12 +1,4 @@
-"""The copy baseline: two rules and no learned weights.
 
-Rule 1 (lookup): if the question's template is in training, run the most common training program
-                 for that template on the question's numbers.
-Rule 2 (nearest question): otherwise copy the program of the most similar training question that
-                 has the same count of numbers.
-
-The sort is stable so that ties between equally similar questions always break the same way.
-"""
 import random
 from collections import Counter, defaultdict
 from dataclasses import dataclass
@@ -19,7 +11,7 @@ TOP_K = 50
 
 @dataclass
 class Evaluation:
-    values: list          # the baseline's answer for each question (None if it has none)
+    values: list          # the baseline's answer for each question 
     seen: np.ndarray      # True if the question's template is in training
     right: np.ndarray     # True if the answer is correct
     similarity: np.ndarray  # similarity of the copied question (new questions only, otherwise NaN)
@@ -49,22 +41,32 @@ class CopyBaseline:
             return None
         return self.dataset.run(programs.most_common(1)[0][0], record)
 
-    def nearest_values(self, questions):
-        """Rule 2. Returns a list of (value, similarity), one per question."""
+    def similarity_rows(self, questions):
+        """For each question, yield its similarity to every training question (TF-IDF cosine)."""
         vectorizer = TfidfVectorizer(ngram_range=(1, 2), sublinear_tf=True)
         train_vectors = vectorizer.fit_transform([self.dataset.template(r) for r in self.train])
         question_vectors = vectorizer.transform([self.dataset.template(r) for r in questions])
         similarity = (question_vectors @ train_vectors.T).tocsr()
+        for i in range(len(questions)):
+            yield similarity.getrow(i).toarray().ravel()
 
+    def nearest(self, questions):
+        """Rule 2's choice. Returns a list of (training index or None, similarity), one per question."""
         output = []
-        for i, record in enumerate(questions):
-            scores = similarity.getrow(i).toarray().ravel()
-            value, best = None, 0.0
+        for record, scores in zip(questions, self.similarity_rows(questions)):
+            choice, best = None, 0.0
             for j in np.argsort(-scores, kind="stable")[:TOP_K]:
                 if self.dataset.number_count(self.train[j]) == self.dataset.number_count(record):
-                    value = self.dataset.run(self.dataset.program_key(self.train[j]), record)
-                    best = float(scores[j])
+                    choice, best = int(j), float(scores[j])
                     break
+            output.append((choice, best))
+        return output
+
+    def nearest_values(self, questions):
+        """Rule 2. Returns a list of (value, similarity), one per question."""
+        output = []
+        for record, (j, best) in zip(questions, self.nearest(questions)):
+            value = None if j is None else self.dataset.run(self.dataset.program_key(self.train[j]), record)
             output.append((value, best))
         return output
 

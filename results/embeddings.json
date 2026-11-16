@@ -1,0 +1,262 @@
+{
+  "filtered": {
+    "tfidf": {
+      "test": {
+        "rules_1_and_2_all": 82.55451713395638,
+        "rule2_new": 39.651416122004356,
+        "rule2_new_right": 182,
+        "new_questions": 459,
+        "near_duplicates_percent_of_new": 35.947712418300654
+      },
+      "test_by_similarity": [
+        {
+          "low": 0.0,
+          "questions": 214,
+          "accuracy": 3.7383177570093453
+        },
+        {
+          "low": 0.5,
+          "questions": 37,
+          "accuracy": 35.13513513513514
+        },
+        {
+          "low": 0.7,
+          "questions": 43,
+          "accuracy": 65.11627906976744
+        },
+        {
+          "low": 0.85,
+          "questions": 165,
+          "accuracy": 80.60606060606061
+        }
+      ],
+      "dev": {
+        "rules_1_and_2_all": 81.58440481128163,
+        "rule2_new": 37.9407616361072,
+        "rule2_new_right": 269,
+        "new_questions": 709,
+        "near_duplicates_percent_of_new": 35.40197461212976
+      },
+      "template_disjoint": {
+        "test_problems": 1608,
+        "rule2": 40.2363184079602
+      }
+    },
+    "sentence-transformers/all-MiniLM-L6-v2": {
+      "test": {
+        "rules_1_and_2_all": 82.49221183800624,
+        "rule2_new": 39.433551198257085,
+        "rule2_new_right": 181,
+        "new_questions": 459,
+        "near_duplicates_percent_of_new": 53.15904139433552
+      },
+      "test_by_similarity": [
+        {
+          "low": 0.0,
+          "questions": 33,
+          "accuracy": 0.0
+        },
+        {
+          "low": 0.5,
+          "questions": 74,
+          "accuracy": 1.3513513513513513
+        },
+        {
+          "low": 0.7,
+          "questions": 108,
+          "accuracy": 16.666666666666664
+        },
+        {
+          "low": 0.85,
+          "questions": 244,
+          "accuracy": 66.39344262295081
+        }
+      ],
+      "dev": {
+        "rules_1_and_2_all": 81.7917876399834,
+        "rule2_new": 38.645980253878705,
+        "rule2_new_right": 274,
+        "new_questions": 709,
+        "near_duplicates_percent_of_new": 49.647390691114246
+      },
+      "template_disjoint": {
+        "test_problems": 1608,
+        "rule2": 42.28855721393035
+      },
+      "same_training_question_as_tfidf_percent": 48.148148148148145
+    },
+    "sentence-transformers/all-mpnet-base-v2": {
+      "test": {
+        "rules_1_and_2_all": 82.55451713395638,
+        "rule2_new": 39.651416122004356,
+        "rule2_new_right": 182,
+        "new_questions": 459,
+        "near_duplicates_percent_of_new": 49.89106753812636
+      },
+      "test_by_similarity": [
+        {
+          "low": 0.0,
+          "questions": 27,
+          "accuracy": 0.0
+        },
+        {
+          "low": 0.5,
+          "questions": 98,
+          "accuracy": 2.0408163265306123
+        },
+        {
+          "low": 0.7,
+          "questions": 105,
+          "accuracy": 16.19047619047619
+        },
+        {
+          "low": 0.85,
+          "questions": 229,
+          "accuracy": 71.17903930131004
+        }
+      ],
+      "dev": {
+        "rules_1_and_2_all": 81.95769390294484,
+        "rule2_new": 39.21015514809591,
+        "rule2_new_right": 278,
+        "new_questions": 709,
+        "near_duplicates_percent_of_new": 45.839210155148095
+      },
+      "template_disjoint": {
+        "test_problems": 1608,
+        "rule2": 41.7910447761194
+      },
+      "same_training_question_as_tfidf_percent": 45.09803921568628
+    }
+  },
+  "full": {
+    "tfidf": {
+      "test": {
+        "rules_1_and_2_all": 64.95812395309882,
+        "rule2_new": 43.14868804664723,
+        "rule2_new_right": 296,
+        "new_questions": 686,
+        "near_duplicates_percent_of_new": 45.626822157434404
+      },
+      "test_by_similarity": [
+        {
+          "low": 0.0,
+          "questions": 244,
+          "accuracy": 15.983606557377051
+        },
+        {
+          "low": 0.5,
+          "questions": 53,
+          "accuracy": 49.056603773584904
+        },
+        {
+          "low": 0.7,
+          "questions": 76,
+          "accuracy": 57.89473684210527
+        },
+        {
+          "low": 0.85,
+          "questions": 313,
+          "accuracy": 59.7444089456869
+        }
+      ],
+      "dev": {
+        "rules_1_and_2_all": 64.78212290502793,
+        "rule2_new": 40.772128060263654,
+        "rule2_new_right": 433,
+        "new_questions": 1062,
+        "near_duplicates_percent_of_new": 47.740112994350284
+      },
+      "template_disjoint": {
+        "test_problems": 2985,
+        "rule2": 41.84254606365159
+      }
+    },
+    "sentence-transformers/all-MiniLM-L6-v2": {
+      "test": {
+        "rules_1_and_2_all": 65.12562814070351,
+        "rule2_new": 43.87755102040816,
+        "rule2_new_right": 301,
+        "new_questions": 686,
+        "near_duplicates_percent_of_new": 63.55685131195335
+      },
+      "test_by_similarity": [
+        {
+          "low": 0.0,
+          "questions": 47,
+          "accuracy": 2.127659574468085
+        },
+        {
+          "low": 0.5,
+          "questions": 74,
+          "accuracy": 24.324324324324326
+        },
+        {
+          "low": 0.7,
+          "questions": 129,
+          "accuracy": 31.782945736434108
+        },
+        {
+          "low": 0.85,
+          "questions": 436,
+          "accuracy": 55.27522935779816
+        }
+      ],
+      "dev": {
+        "rules_1_and_2_all": 64.78212290502793,
+        "rule2_new": 40.772128060263654,
+        "rule2_new_right": 433,
+        "new_questions": 1062,
+        "near_duplicates_percent_of_new": 62.14689265536724
+      },
+      "template_disjoint": {
+        "test_problems": 2985,
+        "rule2": 41.4070351758794
+      },
+      "same_training_question_as_tfidf_percent": 49.416909620991255
+    },
+    "sentence-transformers/all-mpnet-base-v2": {
+      "test": {
+        "rules_1_and_2_all": 64.89112227805695,
+        "rule2_new": 42.857142857142854,
+        "rule2_new_right": 294,
+        "new_questions": 686,
+        "near_duplicates_percent_of_new": 58.16326530612245
+      },
+      "test_by_similarity": [
+        {
+          "low": 0.0,
+          "questions": 48,
+          "accuracy": 2.083333333333333
+        },
+        {
+          "low": 0.5,
+          "questions": 83,
+          "accuracy": 20.481927710843372
+        },
+        {
+          "low": 0.7,
+          "questions": 156,
+          "accuracy": 28.846153846153843
+        },
+        {
+          "low": 0.85,
+          "questions": 399,
+          "accuracy": 57.89473684210527
+        }
+      ],
+      "dev": {
+        "rules_1_and_2_all": 65.00558659217876,
+        "rule2_new": 41.71374764595104,
+        "rule2_new_right": 443,
+        "new_questions": 1062,
+        "near_duplicates_percent_of_new": 58.00376647834275
+      },
+      "template_disjoint": {
+        "test_problems": 2985,
+        "rule2": 41.30653266331658
+      },
+      "same_training_question_as_tfidf_percent": 47.667638483965014
+    }
+  }
+}

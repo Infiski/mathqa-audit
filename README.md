@@ -70,6 +70,21 @@ source .venv/bin/activate
 python -m deduct_reasoner.compare
 ```
 
+## Examples, BERT embeddings and DeductReasoner's errors
+
+These need `sentence-transformers` (`pip install sentence-transformers`). The embedding models download from Hugging Face the first time.
+
+```bash
+python run_embeddings.py --models sentence-transformers/all-MiniLM-L6-v2 sentence-transformers/all-mpnet-base-v2
+python show_retrievals.py
+python show_retrievals.py --dataset full
+python -m deduct_reasoner.analyze
+```
+
+- `run_embeddings.py` runs Rule 2 with sentence embeddings instead of TF-IDF and saves `results/embeddings.json`.
+- `show_retrievals.py` prints the training question that Rule 2 picks for sample test questions, with TF-IDF and with BERT, and saves `results/examples/retrieval_<dataset>.md`.
+- `deduct_reasoner/analyze.py` compares DeductReasoner's steps with the training programs, counts how its wrong answers differ from the reference program, and saves `results/deduct_reasoner_analysis_test.json` and `results/examples/deduct_reasoner_test.md`. It needs the output of `deduct_reasoner.run_checkpoint`.
+
 ## Expected results
 
 Filtered split (value accuracy, %):

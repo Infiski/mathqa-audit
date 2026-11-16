@@ -1,4 +1,4 @@
-"""What differs between the two versions of MathQA: templates, programs and answer checking."""
+
 import json
 import math
 import re

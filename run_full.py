@@ -1,7 +1,4 @@
-"""Repetition and copy-baseline results on the full 37k MathQA dataset.
 
-    python run_full.py
-"""
 import random
 from collections import defaultdict
 
@@ -15,8 +12,8 @@ from src.utils import load_full, percent, save_results
 MATCHING_RULES = (("Closest option", None), ("Within 10%", 0.10), ("Within 5%", 0.05), ("Within 2%", 0.02), ("Within 1%", 0.01), ("Within 0.1%", 0.001))
 
 
+# function to generate random program values for test problems, based on the number of numbers in the problem
 def random_program_values(dataset, train, test, seed=0):
-    """Run a random training program that needs the same count of numbers. A chance-level check."""
     by_count = defaultdict(list)
     for record in train:
         by_count[dataset.number_count(record)].append(dataset.program_key(record))

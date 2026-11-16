@@ -1,7 +1,4 @@
-"""Repetition and copy-baseline results on the filtered MathQA split.
 
-    python run_filtered.py
-"""
 from collections import Counter
 
 import numpy as np

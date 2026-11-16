@@ -1,4 +1,4 @@
-"""Two checks that a difference between two methods on the same questions is not just luck."""
+
 from math import comb
 
 import numpy as np

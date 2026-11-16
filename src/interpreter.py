@@ -1,12 +1,3 @@
-"""Calculators that run MathQA solution programs on a question's numbers.
-
-The two versions of the dataset write programs differently, so there are two interpreters.
-
-Filtered:  [["b", "100.0", "+"], ["a", "100.0", "-_rev"], ["m_1", "100.0", "*"], ...]
-Full:      add(n1,const_100)|subtract(const_100,n0)|multiply(#0,const_100)|...
-
-Both return None when a program cannot be run, and the question then counts as wrong.
-"""
 import math
 import re
 
